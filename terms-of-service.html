@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vibely Terms of Service</title>
+  <meta name="description" content="Vibely Terms of Service and Terms and Conditions" />
+  <style>
+    :root {
+      --bg: #eefaf8;
+      --surface: #ffffff;
+      --surface-alt: #f5faf9;
+      --text: #122234;
+      --muted: #4c5d75;
+      --heading: #0f172a;
+      --line: #dfe9ee;
+      --accent: #12c7b5;
+      --accent-strong: #0ea89f;
+      --secondary: #2563eb;
+      --shadow: rgba(15, 23, 42, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 104px; }
+
+    body {
+      margin: 0;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: radial-gradient(circle at top left, rgba(18, 199, 181, 0.12), transparent 30%), linear-gradient(180deg, #f7fbfb 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    a { color: var(--secondary); text-decoration: none; transition: color 0.18s ease, background-color 0.18s ease, border-color 0.18s ease, transform 0.18s ease; }
+    a:hover, a:focus-visible { color: var(--accent-strong); text-decoration: none; }
+    a:focus-visible { outline: 3px solid rgba(37, 99, 235, 0.25); outline-offset: 2px; }
+
+    p, li { color: var(--muted); font-size: 1.02rem; margin: 0 0 1rem; }
+    ul { margin: 0.75rem 0 1.25rem 1.35rem; padding: 0; }
+    ul li + li { margin-top: 0.35rem; }
+
+    .topbar { position: sticky; top: 0; z-index: 50; background: rgba(247, 251, 251, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(209, 224, 230, 0.8); box-shadow: 0 8px 24px rgba(15, 23, 42, 0.03); }
+    .topbar-inner { max-width: 1180px; margin: 0 auto; padding: 0.9rem 1rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .brand { display: inline-flex; align-items: center; gap: 0.8rem; color: var(--heading); font-weight: 700; letter-spacing: -0.02em; }
+    .brand img { width: 38px; height: 38px; border-radius: 12px; object-fit: cover; box-shadow: 0 12px 28px rgba(18, 199, 181, 0.2); border: 1px solid rgba(255, 255, 255, 0.7); background: white; }
+    .brand span { font-size: 1.05rem; }
+    .topnav { display: flex; align-items: center; gap: 0.35rem; flex-wrap: wrap; justify-content: flex-end; }
+    .topnav a { color: var(--heading); font-weight: 600; padding: 0.52rem 0.72rem; border-radius: 999px; }
+    .topnav a:hover, .topnav a:focus-visible, .topnav a.is-active { background: rgba(18, 199, 181, 0.12); color: var(--accent-strong); }
+
+    main { max-width: 1220px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+    .policy-card { background: rgba(255, 255, 255, 0.95); border: 1px solid rgba(217, 228, 233, 0.9); border-radius: 28px; box-shadow: 0 26px 60px var(--shadow); padding: 0 1.1rem 1.3rem; position: relative; overflow: hidden; counter-reset: section-counter; }
+    .policy-card::before { content: ""; position: absolute; inset: 0 auto auto 0; width: 100%; height: 180px; background: linear-gradient(135deg, rgba(18, 199, 181, 0.14), rgba(37, 99, 235, 0.08), transparent 70%); pointer-events: none; }
+    .hero { position: relative; z-index: 1; padding: 2.2rem 1rem 1.5rem; border-bottom: 1px solid var(--line); margin-bottom: 1.4rem; }
+    .brand-hero { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem; }
+    .brand-badge { width: 74px; height: 74px; display: grid; place-items: center; border-radius: 24px; background: linear-gradient(145deg, rgba(18, 199, 181, 0.12), rgba(37, 99, 235, 0.12)); border: 1px solid rgba(18, 199, 181, 0.18); box-shadow: 0 18px 34px rgba(18, 199, 181, 0.12); flex-shrink: 0; }
+    .brand-badge img { width: 52px; height: 52px; object-fit: cover; border-radius: 18px; }
+    .brand-name { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--secondary); font-weight: 700; margin-bottom: 0.35rem; }
+    h1, h2, h3 { color: var(--heading); line-height: 1.25; letter-spacing: -0.02em; margin: 0; }
+    h1 { font-size: clamp(2.25rem, 5vw, 3.4rem); }
+    h2 { position: relative; display: flex; align-items: center; gap: 0.9rem; font-size: clamp(1.38rem, 2vw, 1.8rem); margin: 2.15rem 0 0.9rem; padding: 0.4rem 0 0.8rem; border-bottom: 1px solid rgba(217, 228, 233, 0.9); scroll-margin-top: 110px; }
+    h2::before { counter-increment: section-counter; content: counter(section-counter, decimal-leading-zero); display: inline-flex; align-items: center; justify-content: center; min-width: 3rem; height: 2.2rem; padding: 0 0.6rem; border-radius: 999px; background: linear-gradient(135deg, rgba(18, 199, 181, 0.16), rgba(37, 99, 235, 0.12)); color: var(--accent-strong); border: 1px solid rgba(18, 199, 181, 0.2); font-size: 0.76rem; font-weight: 800; letter-spacing: 0.06em; flex-shrink: 0; }
+    h3 { font-size: 1.12rem; margin: 1.2rem 0 0.6rem; }
+    .tagline { margin: 0.55rem 0 0; color: var(--muted); font-size: 1.08rem; font-weight: 600; }
+    .hero-meta { display: flex; align-items: center; gap: 0.7rem; margin-top: 0.8rem; color: var(--muted); font-size: 0.95rem; }
+    .hero-meta .dot { width: 8px; height: 8px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--secondary)); box-shadow: 0 0 0 5px rgba(18, 199, 181, 0.12); }
+
+    .notice-card, .toc, .highlight-panel, .contact-card, .related-card { position: relative; z-index: 1; background: rgba(255, 255, 255, 0.96); border: 1px solid var(--line); border-radius: 22px; box-shadow: 0 16px 32px rgba(15, 23, 42, 0.04); }
+    .notice-card { margin: 0 1rem 1.4rem; padding: 1.2rem 1.25rem; background: linear-gradient(135deg, rgba(18, 199, 181, 0.08), rgba(37, 99, 235, 0.04)); border-left: 4px solid var(--accent); display: flex; gap: 0.9rem; align-items: flex-start; }
+    .notice-icon { width: 42px; height: 42px; border-radius: 14px; background: rgba(18, 199, 181, 0.12); color: var(--accent-strong); display: grid; place-items: center; font-size: 1.2rem; border: 1px solid rgba(18, 199, 181, 0.16); flex-shrink: 0; }
+    .notice-card p { margin: 0; color: var(--text); font-size: 1rem; }
+    .policy-content { padding: 0 1rem; }
+    .toc { margin: 0 0 1.8rem; padding: 1.2rem 1.1rem 1.1rem; background: linear-gradient(180deg, rgba(245, 250, 249, 0.98), rgba(255, 255, 255, 1)); }
+    .toc h3 { font-size: 1.05rem; margin-bottom: 0.9rem; }
+    .toc ul { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.7rem 0.9rem; margin: 0; padding: 0; }
+    .toc li { margin: 0; }
+    .toc a { display: flex; align-items: center; gap: 0.7rem; min-height: 52px; padding: 0.7rem 0.9rem; color: var(--heading); background: rgba(255, 255, 255, 0.7); border: 1px solid var(--line); border-radius: 16px; }
+    .toc a:hover, .toc a:focus-visible { transform: translateY(-1px); box-shadow: 0 12px 20px rgba(15, 23, 42, 0.05); border-color: rgba(18, 199, 181, 0.38); color: var(--heading); }
+    .toc-number { width: 2rem; height: 2rem; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(135deg, rgba(18, 199, 181, 0.18), rgba(37, 99, 235, 0.12)); color: var(--accent-strong); font-size: 0.75rem; font-weight: 700; flex-shrink: 0; }
+    .toc-label { display: inline-block; font-size: 0.96rem; font-weight: 600; line-height: 1.35; }
+    .highlight-panel { margin: 1rem 0 1.4rem; padding: 1rem 1.1rem; background: linear-gradient(135deg, rgba(248, 113, 113, 0.1), rgba(255, 255, 255, 0.95)); border: 1px solid rgba(248, 113, 113, 0.3); }
+    .highlight-panel h3 { margin-top: 0; color: #9f1239; }
+    .highlight-panel p, .highlight-panel li { color: #5f2738; }
+    .contact-card, .related-card { margin: 1.5rem 0 0; padding: 1.3rem 1.2rem; background: linear-gradient(135deg, rgba(18, 199, 181, 0.1), rgba(37, 99, 235, 0.04)); border: 1px solid rgba(18, 199, 181, 0.22); }
+    .contact-card h3, .related-card h3 { margin-top: 0; margin-bottom: 0.4rem; font-size: 1.25rem; }
+    .contact-card h2 { margin: 0 0 0.4rem; padding: 0; border-bottom: 0; font-size: 1.25rem; }
+    .contact-card p { margin-bottom: 0.45rem; color: var(--text); }
+    .email-link { display: inline-block; color: var(--secondary); font-weight: 700; word-break: break-word; padding: 0.2rem 0.25rem; border-radius: 8px; }
+    footer { margin-top: 2.1rem; padding: 1.1rem 1rem 0.2rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.94rem; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding-top: 0.15rem; }
+    .footer-brand { display: inline-flex; align-items: center; gap: 0.7rem; color: var(--heading); font-weight: 700; }
+    .footer-brand img { width: 30px; height: 30px; border-radius: 10px; object-fit: cover; }
+    .footer-links { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+    .float-top { position: fixed; right: 1.2rem; bottom: 1.2rem; width: 52px; height: 52px; border: none; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--secondary)); color: white; font-size: 1.4rem; box-shadow: 0 18px 26px rgba(18, 199, 181, 0.24); cursor: pointer; opacity: 0; transform: translateY(12px); pointer-events: none; transition: opacity 0.2s ease, transform 0.2s ease; z-index: 80; }
+    .float-top.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+
+    @media (max-width: 720px) {
+      .topbar-inner { padding-top: 0.7rem; padding-bottom: 0.7rem; }
+      .topnav { gap: 0.15rem; }
+      .topnav a { padding: 0.45rem 0.55rem; }
+      .policy-card { border-radius: 22px; }
+      .hero { padding-top: 1.6rem; }
+      .brand-hero { align-items: flex-start; }
+      .brand-badge { width: 60px; height: 60px; border-radius: 18px; }
+      .brand-badge img { width: 42px; height: 42px; }
+      .notice-card { padding: 1rem; }
+      .policy-content { padding: 0 0.75rem; }
+    }
+
+    @media (max-width: 560px) {
+      main { padding-left: 0.7rem; padding-right: 0.7rem; }
+      .topbar-inner { display: block; }
+      .brand { margin-bottom: 0.45rem; }
+      .topnav { width: 100%; justify-content: flex-start; }
+      h2 { display: block; }
+      h2::before { margin-bottom: 0.6rem; }
+      .toc ul { grid-template-columns: 1fr; }
+      .footer-inner { display: block; }
+      .footer-links { margin-top: 0.65rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar" aria-label="Sticky header">
+    <div class="topbar-inner">
+      <a href="#top" class="brand" aria-label="Vibely home"><img src="vibely app icon.png" alt="Vibely logo" /><span>Vibely</span></a>
+      <nav class="topnav" aria-label="Main navigation">
+        <a href="index.html">Privacy Policy</a>
+        <a href="terms-of-service.html" class="is-active" aria-current="page">Terms of Service</a>
+        <a href="https://vk57434.github.io/child-safety/">Child Safety Standards</a>
+        <a href="mailto:max459010@gmail.com">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <article class="policy-card">
+      <div class="hero">
+        <div class="brand-hero">
+          <div class="brand-badge"><img src="vibely app icon.png" alt="Vibely icon" /></div>
+          <div><div class="brand-name">Vibely</div><h1>Terms of Service</h1></div>
+        </div>
+        <p class="tagline">Rules and terms for using Vibely.</p>
+        <div class="hero-meta"><span class="dot" aria-hidden="true"></span><span>Last Updated: 2026-09-12</span></div>
+      </div>
+
+      <div class="notice-card" role="note" aria-label="Terms notice">
+        <div class="notice-icon" aria-hidden="true">i</div>
+        <p>These Terms of Service govern your use of Vibely. By creating an account or using Vibely, you agree to follow these Terms and applicable laws. These Terms do not override rights that cannot legally be waived.</p>
+      </div>
+
+      <div class="policy-content">
+        <nav class="toc" aria-label="Table of contents">
+          <h3>Contents</h3>
+          <ul>
+            <li><a href="#introduction"><span class="toc-number">01</span><span class="toc-label">1. Introduction</span></a></li>
+            <li><a href="#eligibility"><span class="toc-number">02</span><span class="toc-label">2. Eligibility</span></a></li>
+            <li><a href="#account"><span class="toc-number">03</span><span class="toc-label">3. Your Vibely Account</span></a></li>
+            <li><a href="#acceptable-use"><span class="toc-number">04</span><span class="toc-label">4. Acceptable Use</span></a></li>
+            <li><a href="#prohibited"><span class="toc-number">05</span><span class="toc-label">5. Prohibited Content and Conduct</span></a></li>
+            <li><a href="#user-content"><span class="toc-number">06</span><span class="toc-label">6. User-Generated Content</span></a></li>
+            <li><a href="#content-license"><span class="toc-number">07</span><span class="toc-label">7. Content License</span></a></li>
+            <li><a href="#copyright"><span class="toc-number">08</span><span class="toc-label">8. Copyright and Intellectual Property</span></a></li>
+            <li><a href="#reporting"><span class="toc-number">09</span><span class="toc-label">9. Reporting and Enforcement</span></a></li>
+            <li><a href="#child-safety"><span class="toc-number">10</span><span class="toc-label">10. Child Safety</span></a></li>
+            <li><a href="#messaging"><span class="toc-number">11</span><span class="toc-label">11. Messaging and Calls</span></a></li>
+            <li><a href="#stories"><span class="toc-number">12</span><span class="toc-label">12. Stories, Reels and Sharing</span></a></li>
+            <li><a href="#music"><span class="toc-number">13</span><span class="toc-label">13. Music and Audio</span></a></li>
+            <li><a href="#third-party"><span class="toc-number">14</span><span class="toc-label">14. Third-Party Services</span></a></li>
+            <li><a href="#privacy"><span class="toc-number">15</span><span class="toc-label">15. Privacy</span></a></li>
+            <li><a href="#suspension"><span class="toc-number">16</span><span class="toc-label">16. Account Suspension and Termination</span></a></li>
+            <li><a href="#deletion"><span class="toc-number">17</span><span class="toc-label">17. Account Deletion</span></a></li>
+            <li><a href="#availability"><span class="toc-number">18</span><span class="toc-label">18. Service Availability</span></a></li>
+            <li><a href="#disclaimers"><span class="toc-number">19</span><span class="toc-label">19. Disclaimers</span></a></li>
+            <li><a href="#liability"><span class="toc-number">20</span><span class="toc-label">20. Limitation of Liability</span></a></li>
+            <li><a href="#changes-vibely"><span class="toc-number">21</span><span class="toc-label">21. Changes to Vibely</span></a></li>
+            <li><a href="#changes-terms"><span class="toc-number">22</span><span class="toc-label">22. Changes to These Terms</span></a></li>
+            <li><a href="#governing-law"><span class="toc-number">23</span><span class="toc-label">23. Governing Law</span></a></li>
+            <li><a href="#contact"><span class="toc-number">24</span><span class="toc-label">24. Contact Us</span></a></li>
+          </ul>
+        </nav>
+
+        <section id="introduction"><h2>1. Introduction</h2><p>Vibely is a social networking application where users can create profiles and interact with other users. These Terms govern access to and use of Vibely. By creating an account, accessing, or using Vibely, you agree to these Terms and applicable laws. If you do not agree, do not use the service.</p></section>
+        <section id="eligibility"><h2>2. Eligibility</h2><p>You must meet the minimum age required by applicable law and Vibely's applicable age requirements to use the service. You must not use Vibely if you are legally prohibited from doing so. You are responsible for ensuring that your use complies with applicable laws.</p></section>
+        <section id="account"><h2>3. Your Vibely Account</h2><p>You must provide accurate information and must not impersonate another person. You are responsible for protecting your login credentials and for activity performed through your account. Notify Vibely if you believe your account has been compromised. You must not sell, transfer, or improperly share your account.</p></section>
+        <section id="acceptable-use"><h2>4. Acceptable Use</h2><p>You may use Vibely only for lawful purposes and in accordance with these Terms. Permitted activities may include creating a profile, sharing permitted photos and videos, creating Reels and Stories, messaging, following users, liking and commenting, participating in audio or video calls, using supported themes and AI Theme Studio, and sharing other permitted content.</p></section>
+
+        <section id="prohibited"><h2>5. Prohibited Content and Conduct</h2><div class="highlight-panel"><h3>Safety and platform rules</h3><p>You must not use Vibely for:</p><ul><li>Illegal activity, fraud, scams, harassment, threats, stalking, bullying, or impersonation.</li><li>Hate or abusive conduct where prohibited by applicable law, unauthorized account access, hacking, malware, spam, phishing, or attempts to compromise Vibely.</li><li>Sharing another person's private information without authorization, copyright or trademark infringement, or non-consensual intimate content.</li><li>Sexual exploitation, child sexual abuse or exploitation, CSAM, grooming, sexual solicitation of minors, or any attempt to facilitate exploitation of minors.</li><li>Circumventing safety or security systems or manipulating or abusing platform features.</li></ul></div></section>
+        <section id="user-content"><h2>6. User-Generated Content</h2><p>Vibely allows users to create and upload photos, videos, Reels, Stories, captions, comments, text, stickers, emojis, messages, profile information, and other supported content. Users are responsible for the content they create, upload, or share and must have the necessary rights, permissions, or authorization to use it.</p></section>
+        <section id="content-license"><h2>7. Content License</h2><p>Users retain ownership of content they create, subject to third-party rights. By uploading or sharing content through Vibely, you grant Vibely a limited, non-exclusive license to host, store, reproduce, process, display, transmit, and make that content available as reasonably necessary to operate and provide Vibely's features, consistent with your selected sharing settings where applicable.</p><p>This license is limited to providing and operating Vibely and does not give Vibely an unlimited right to sell or commercially exploit your content. It may continue where technically or legally necessary, such as for backups or content shared with other users, subject to applicable law.</p></section>
+        <section id="copyright"><h2>8. Copyright and Intellectual Property</h2><p>Vibely's name, branding, software, interface, and original platform materials may be protected by intellectual-property laws. Users must respect third-party intellectual-property rights and should not upload copyrighted material without appropriate authorization. Copyright owners may contact Vibely about suspected infringement at <a href="mailto:max459010@gmail.com">max459010@gmail.com</a>.</p></section>
+        <section id="reporting"><h2>9. Reporting and Enforcement</h2><p>Users can report violations through available reporting mechanisms in the app, if implemented, or contact <a href="mailto:max459010@gmail.com">max459010@gmail.com</a> for serious concerns. Vibely may take appropriate action, including removing or restricting content, restricting features, suspending or terminating accounts, blocking access, preserving information when legally required, and cooperating with authorities when required or permitted by law. A report does not guarantee removal or a particular outcome.</p></section>
+        <section id="child-safety"><h2>10. Child Safety</h2><div class="highlight-panel"><h3>Vibely Child Safety Standards</h3><p>Vibely prohibits Child Sexual Abuse and Exploitation (CSAE), Child Sexual Abuse Material (CSAM), sexual content involving minors, grooming, sexual solicitation of minors, exploitation of children, and requesting, sharing, distributing, promoting, or facilitating CSAM.</p><p>Report suspected child-safety violations through the available in-app reporting mechanism, if implemented, or contact <a href="mailto:max459010@gmail.com?subject=Vibely%20Child%20Safety%20Report">max459010@gmail.com</a>. Review the <a href="https://vk57434.github.io/child-safety/">Vibely Child Safety Standards</a>.</p></div></section>
+        <section id="messaging"><h2>11. Messaging and Calls</h2><p>Vibely provides messaging and audio or video calling features. Users must not use messaging or calls for harassment, threats, scams, illegal activity, sexual exploitation, or distribution of prohibited content. Vibely does not claim that messages or calls are recorded or end-to-end encrypted unless that is actually implemented and verified.</p></section>
+        <section id="stories"><h2>12. Stories, Reels and Sharing</h2><p>Users can create and share Stories and Reels where supported. You must respect content ownership, privacy, sharing permissions, and creator controls. If a Reel creator disables Story resharing, you must not attempt to circumvent that restriction.</p></section>
+        <section id="music"><h2>13. Music and Audio</h2><p>You are responsible for ensuring that you have the necessary rights or permission to use music or audio you upload or share. Vibely does not claim ownership of third-party music rights and does not claim that all music is licensed.</p></section>
+        <section id="third-party"><h2>14. Third-Party Services</h2><p>Vibely may use Firebase, Cloudinary, WebRTC-related infrastructure, and an AI service used by AI Theme Studio. These third-party services may have separate terms and policies, and your use of related features may also be subject to them.</p></section>
+        <section id="privacy"><h2>15. Privacy</h2><p>Your use of Vibely is also subject to the <a href="index.html">Vibely Privacy Policy</a>. These Terms do not duplicate that policy.</p></section>
+        <section id="suspension"><h2>16. Account Suspension and Termination</h2><p>Vibely may suspend or terminate an account when appropriate, including for violations of these Terms, serious safety violations, illegal activity, fraud, abuse, security threats, or repeated violations. Any action will be taken subject to applicable law and relevant circumstances.</p></section>
+        <section id="deletion"><h2>17. Account Deletion</h2><p>You may delete your account using the account deletion functionality provided by Vibely, where available. See <a href="delete.html">Delete Your Vibely Account</a>. Deletion may permanently remove account information and associated user content, subject to applicable legal, security, fraud-prevention, backup, or other legitimate retention requirements. Vibely does not promise instant deletion of every backup.</p></section>
+        <section id="availability"><h2>18. Service Availability</h2><p>Vibely may occasionally experience maintenance, updates, bugs, outages, network problems, or third-party service interruptions. The service is not guaranteed to be uninterrupted or error-free.</p></section>
+        <section id="disclaimers"><h2>19. Disclaimers</h2><p>Vibely is provided subject to applicable law. You should not rely on the service as a guarantee of uninterrupted, secure, or error-free operation. Nothing in these Terms attempts to disclaim rights or remedies that cannot legally be excluded.</p></section>
+        <section id="liability"><h2>20. Limitation of Liability</h2><p><strong>[LIMITATION OF LIABILITY SUBJECT TO APPLICABLE LAW]</strong> To the maximum extent permitted by applicable law, any limitation of liability for Vibely will apply only to liabilities that may legally be limited and will not remove rights or remedies that cannot legally be excluded.</p></section>
+        <section id="changes-vibely"><h2>21. Changes to Vibely</h2><p>Vibely may add, modify, or remove features, change functionality, or update the app. Changes may be necessary for security, legal, technical, or product reasons.</p></section>
+        <section id="changes-terms"><h2>22. Changes to These Terms</h2><p>Vibely may update these Terms from time to time. The latest version will be published on this webpage. The current version was last updated on 12 September 2026.</p></section>
+        <section id="governing-law"><h2>23. Governing Law</h2><p><strong>[GOVERNING LAW / JURISDICTION]</strong> The applicable governing law and jurisdiction will be determined according to information inserted by the developer and applicable law.</p></section>
+
+        <section class="contact-card" id="contact"><h2>24. Contact Us</h2><p>Developer: Max Technologies and IT Services Pvt Ltd</p><p>Support: <a class="email-link" href="mailto:max459010@gmail.com">max459010@gmail.com</a></p><p>Child Safety: <a class="email-link" href="mailto:max459010@gmail.com?subject=Vibely%20Child%20Safety%20Report">max459010@gmail.com</a></p></section>
+        <section class="related-card" aria-labelledby="related-title"><h3 id="related-title">Related Policies</h3><p><a href="index.html">Privacy Policy</a></p><p><a href="https://vk57434.github.io/child-safety/">Child Safety Standards</a></p><p><a href="index.html#account-deletion">Account Deletion</a></p></section>
+
+        <footer><div class="footer-inner"><div class="footer-brand"><img src="vibely app icon.png" alt="Vibely logo" /><span>Vibely</span></div><div class="footer-links"><a href="index.html">Privacy Policy</a><a href="terms-of-service.html" aria-current="page">Terms of Service</a><a href="https://vk57434.github.io/child-safety/">Child Safety Standards</a><a href="">Delete Account</a><a href="mailto:max459010@gmail.com">Contact Us</a><span>&copy; 2026 Vibely</span></div></div></footer>
+      </div>
+    </article>
+  </main>
+
+  <button id="backToTop" class="float-top" type="button" aria-label="Back to top">&uarr;</button>
+  <script>
+    const backToTop = document.getElementById('backToTop');
+    function toggleBackToTop() { backToTop.classList.toggle('visible', window.scrollY > 260); }
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    window.addEventListener('scroll', toggleBackToTop, { passive: true });
+    toggleBackToTop();
+  </script>
+</body>
+</html>
