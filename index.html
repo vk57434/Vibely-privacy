@@ -7,332 +7,855 @@
   <meta name="description" content="Vibely Privacy Policy" />
   <style>
     :root {
-      --bg: #f6f7fb;
+      --bg: #eefaf8;
+      --bg-strong: #e6f7f3;
       --surface: #ffffff;
-      --surface-alt: #f3f4f6;
-      --text: #1f2937;
-      --muted: #4b5563;
-      --heading: #111827;
-      --line: #e5e7eb;
-      --accent: #7c3aed;
-      --accent-soft: #f3e8ff;
-      --shadow: rgba(15, 23, 42, 0.06);
+      --surface-alt: #f5faf9;
+      --text: #122234;
+      --muted: #4c5d75;
+      --heading: #0f172a;
+      --line: #dfe9ee;
+      --accent: #12c7b5;
+      --accent-strong: #0ea89f;
+      --secondary: #2563eb;
+      --accent-soft: rgba(18, 199, 181, 0.12);
+      --shadow: rgba(15, 23, 42, 0.08);
+      --shadow-strong: rgba(18, 199, 181, 0.12);
     }
 
     * { box-sizing: border-box; }
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 104px;
     }
 
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(18, 199, 181, 0.12), transparent 30%),
+        linear-gradient(180deg, #f7fbfb 0%, var(--bg) 100%);
       color: var(--text);
-      line-height: 1.7;
-    }
-
-    main {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 32px 16px 64px;
-    }
-
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      box-shadow: 0 14px 32px var(--shadow);
-      padding: 28px;
-    }
-
-    h1, h2, h3 {
-      color: var(--heading);
-      line-height: 1.3;
-      margin-top: 0;
-    }
-
-    h1 {
-      font-size: clamp(2.1rem, 5vw, 3rem);
-      margin-bottom: 10px;
-    }
-
-    h2 {
-      font-size: clamp(1.3rem, 2.5vw, 1.7rem);
-      margin-top: 32px;
-      margin-bottom: 12px;
-      padding-top: 8px;
-    }
-
-    p, li {
-      color: var(--muted);
-      font-size: 1rem;
-    }
-
-    ul {
-      margin: 12px 0 0 18px;
-      padding: 0;
+      line-height: 1.75;
     }
 
     a {
-      color: var(--accent);
+      color: var(--secondary);
       text-decoration: none;
-      font-weight: 600;
+      transition: color 0.18s ease, transform 0.18s ease, background-color 0.18s ease, border-color 0.18s ease;
     }
 
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .email-link {
-      display: inline-block;
-      color: var(--accent);
+    a:hover,
+    a:focus-visible {
+      color: var(--accent-strong);
       text-decoration: none;
-      font-weight: 600;
-      padding: 2px 0;
-      border-radius: 4px;
     }
 
-    .email-link:hover,
-    .email-link:focus-visible {
-      text-decoration: underline;
-      outline: 2px solid rgba(124, 58, 237, 0.25);
-      outline-offset: 2px;
-    }
-
-    .meta {
-      margin: 0 0 18px;
-      font-size: 0.96rem;
+    p,
+    li {
       color: var(--muted);
+      font-size: 1.02rem;
+      margin: 0 0 1rem;
     }
 
-    .toc {
-      background: var(--surface-alt);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 18px 20px;
-      margin: 22px 0 28px;
-    }
-
-    .toc h3 {
-      margin: 0 0 12px;
-      font-size: 1.1rem;
-    }
-
-    .toc ul {
-      list-style: none;
-      margin: 0;
+    ul {
+      margin: 0.75rem 0 1.25rem 1.35rem;
       padding: 0;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 8px 16px;
     }
 
-    .toc a {
-      display: inline-block;
+    ul li + li {
+      margin-top: 0.35rem;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(247, 251, 251, 0.8);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(209, 224, 230, 0.8);
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.03);
+    }
+
+    .topbar-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0.9rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
       color: var(--heading);
-      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .brand img {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 12px 28px rgba(18, 199, 181, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      background: white;
+    }
+
+    .brand span {
+      font-size: 1.05rem;
+    }
+
+    .topnav {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .topnav a {
+      color: var(--heading);
       font-weight: 600;
+      padding: 0.52rem 0.88rem;
+      border-radius: 999px;
+      transition: background-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
     }
 
-    .toc a:hover {
-      color: var(--accent);
-      text-decoration: underline;
+    .topnav a:hover,
+    .topnav a:focus-visible,
+    .topnav a.is-active {
+      background: rgba(18, 199, 181, 0.12);
+      color: var(--accent-strong);
     }
 
-    .note {
-      margin: 18px 0 24px;
-      padding: 14px 16px;
-      border-left: 4px solid var(--accent);
-      background: var(--accent-soft);
-      border-radius: 10px;
-      color: var(--text);
+    main {
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 2rem 1rem 4rem;
     }
 
-    footer {
-      margin-top: 36px;
-      padding-top: 20px;
-      border-top: 1px solid var(--line);
+    .policy-card {
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(217, 228, 233, 0.9);
+      border-radius: 28px;
+      box-shadow: 0 26px 60px var(--shadow);
+      padding: 0 1.1rem 1.3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .policy-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 100%;
+      height: 180px;
+      background: linear-gradient(135deg, rgba(18, 199, 181, 0.14), rgba(37, 99, 235, 0.08), transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero {
+      position: relative;
+      z-index: 1;
+      padding: 2.2rem 1rem 1.5rem;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 1.4rem;
+    }
+
+    .brand-hero {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .brand-badge {
+      width: 74px;
+      height: 74px;
+      display: grid;
+      place-items: center;
+      border-radius: 24px;
+      background: linear-gradient(145deg, rgba(18, 199, 181, 0.12), rgba(37, 99, 235, 0.12));
+      border: 1px solid rgba(18, 199, 181, 0.18);
+      box-shadow: 0 18px 34px rgba(18, 199, 181, 0.12);
+      flex-shrink: 0;
+    }
+
+    .brand-badge img {
+      width: 52px;
+      height: 52px;
+      object-fit: cover;
+      border-radius: 18px;
+    }
+
+    .brand-name {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--secondary);
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: var(--heading);
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: clamp(2.25rem, 5vw, 3.4rem);
+      margin: 0;
+    }
+
+    .tagline {
+      margin: 0.55rem 0 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin-top: 0.8rem;
       color: var(--muted);
       font-size: 0.95rem;
     }
 
-    @media (max-width: 640px) {
-      .card {
-        padding: 20px 16px;
+    .hero-meta .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--secondary));
+      box-shadow: 0 0 0 5px rgba(18, 199, 181, 0.12);
+    }
+
+    .notice-card,
+    .toc,
+    .highlight-panel,
+    .contact-card {
+      position: relative;
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: 0 16px 32px rgba(15, 23, 42, 0.04);
+    }
+
+    .notice-card {
+      margin: 0 1rem 1.4rem;
+      padding: 1.2rem 1.25rem;
+      background: linear-gradient(135deg, rgba(18, 199, 181, 0.08), rgba(37, 99, 235, 0.04));
+      border-left: 4px solid var(--accent);
+      display: flex;
+      gap: 0.9rem;
+      align-items: flex-start;
+    }
+
+    .notice-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: rgba(18, 199, 181, 0.12);
+      color: var(--accent-strong);
+      display: grid;
+      place-items: center;
+      font-size: 1.2rem;
+      border: 1px solid rgba(18, 199, 181, 0.16);
+      flex-shrink: 0;
+    }
+
+    .notice-card p {
+      margin: 0;
+      color: var(--text);
+      font-size: 1rem;
+    }
+
+    .policy-content {
+      padding: 0 1rem;
+    }
+
+    .toc {
+      margin: 0 0 1.8rem;
+      padding: 1.2rem 1.1rem 1.1rem;
+      background: linear-gradient(180deg, rgba(245, 250, 249, 0.98), rgba(255, 255, 255, 1));
+    }
+
+    .toc h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.9rem;
+      color: var(--heading);
+    }
+
+    .toc ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.7rem 0.9rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .toc li {
+      margin: 0;
+    }
+
+    .toc a {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      min-height: 52px;
+      padding: 0.7rem 0.9rem;
+      color: var(--heading);
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.15);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .toc a:hover,
+    .toc a:focus-visible {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 20px rgba(15, 23, 42, 0.05);
+      border-color: rgba(18, 199, 181, 0.38);
+      color: var(--heading);
+    }
+
+    .toc-number {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(18, 199, 181, 0.18), rgba(37, 99, 235, 0.12));
+      color: var(--accent-strong);
+      font-size: 0.75rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .toc-label {
+      display: inline-block;
+      font-size: 0.96rem;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+
+    .section {
+      scroll-margin-top: 110px;
+    }
+
+    h2 {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      font-size: clamp(1.38rem, 2vw, 1.8rem);
+      margin: 2.15rem 0 0.9rem;
+      padding: 0.4rem 0 0.15rem;
+      border-bottom: 1px solid rgba(217, 228, 233, 0.9);
+      padding-bottom: 0.8rem;
+      scroll-margin-top: 110px;
+    }
+
+    h2::before {
+      counter-increment: section-counter;
+      content: counter(section-counter, decimal-leading-zero);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 3rem;
+      height: 2.2rem;
+      padding: 0 0.6rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(18, 199, 181, 0.16), rgba(37, 99, 235, 0.12));
+      color: var(--accent-strong);
+      border: 1px solid rgba(18, 199, 181, 0.2);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      box-shadow: 0 10px 20px rgba(18, 199, 181, 0.08);
+      flex-shrink: 0;
+    }
+
+    .policy-card {
+      counter-reset: section-counter;
+    }
+
+    h3 {
+      font-size: 1.12rem;
+      margin: 1.2rem 0 0.6rem;
+    }
+
+    .highlight-panel {
+      margin: 1rem 0 1.4rem;
+      padding: 1rem 1.1rem;
+      background: linear-gradient(135deg, rgba(18, 199, 181, 0.06), rgba(255, 255, 255, 0.95));
+      border: 1px solid rgba(18, 199, 181, 0.18);
+      box-shadow: 0 14px 28px rgba(15, 23, 42, 0.03);
+    }
+
+    .highlight-panel p:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact-card {
+      margin: 1.5rem 0 0;
+      padding: 1.3rem 1.2rem;
+      background: linear-gradient(135deg, rgba(18, 199, 181, 0.1), rgba(37, 99, 235, 0.04));
+      border: 1px solid rgba(18, 199, 181, 0.22);
+    }
+
+    .contact-card h3 {
+      margin-top: 0;
+      margin-bottom: 0.4rem;
+      font-size: 1.25rem;
+    }
+
+    .contact-card p {
+      margin-bottom: 0.45rem;
+      color: var(--text);
+    }
+
+    .email-link {
+      display: inline-block;
+      color: var(--secondary);
+      font-weight: 700;
+      word-break: break-word;
+      padding: 0.2rem 0.25rem;
+      border-radius: 8px;
+      transition: background-color 0.18s ease, color 0.18s ease;
+    }
+
+    .email-link:hover,
+    .email-link:focus-visible {
+      background: rgba(18, 199, 181, 0.12);
+      color: var(--accent-strong);
+      text-decoration: none;
+      outline: none;
+    }
+
+    footer {
+      margin-top: 2.1rem;
+      padding: 1.1rem 1rem 0.2rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding-top: 0.15rem;
+    }
+
+    .footer-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      color: var(--heading);
+      font-weight: 700;
+    }
+
+    .footer-brand img {
+      width: 30px;
+      height: 30px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .float-top {
+      position: fixed;
+      right: 1.2rem;
+      bottom: 1.2rem;
+      width: 52px;
+      height: 52px;
+      border: none;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--secondary));
+      color: white;
+      font-size: 1.4rem;
+      box-shadow: 0 18px 26px rgba(18, 199, 181, 0.24);
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(12px);
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      z-index: 80;
+    }
+
+    .float-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .float-top:focus-visible {
+      outline: 3px solid rgba(37, 99, 235, 0.25);
+      outline-offset: 2px;
+    }
+
+    @media (max-width: 720px) {
+      .topbar-inner {
+        padding-top: 0.7rem;
+        padding-bottom: 0.7rem;
       }
 
+      .brand span {
+        font-size: 1rem;
+      }
+
+      .topnav {
+        gap: 0.25rem;
+      }
+
+      .topnav a {
+        padding: 0.45rem 0.7rem;
+      }
+
+      .policy-card {
+        border-radius: 22px;
+      }
+
+      .hero {
+        padding-top: 1.6rem;
+      }
+
+      .brand-hero {
+        align-items: flex-start;
+      }
+
+      .brand-badge {
+        width: 60px;
+        height: 60px;
+        border-radius: 18px;
+      }
+
+      .brand-badge img {
+        width: 42px;
+        height: 42px;
+      }
+
+      .notice-card {
+        padding: 1rem;
+      }
+
+      .policy-content {
+        padding: 0 0.75rem;
+      }
+    }
+
+    @media (max-width: 560px) {
       main {
-        padding: 20px 12px 40px;
+        padding-left: 0.7rem;
+        padding-right: 0.7rem;
+      }
+
+      .topnav {
+        width: 100%;
+        justify-content: flex-end;
+      }
+
+      .topbar-inner {
+        display: block;
+      }
+
+      .brand {
+        margin-bottom: 0.45rem;
+      }
+
+      h2 {
+        display: block;
+      }
+
+      h2::before {
+        margin-bottom: 0.6rem;
+      }
+
+      .toc ul {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        display: block;
+      }
+
+      .footer-links {
+        margin-top: 0.65rem;
       }
     }
   </style>
 </head>
 <body>
-  <main>
-    <article class="card">
-      <h1>Vibely Privacy Policy</h1>
-      <p class="meta">Last Updated: 2026-09-12</p>
+  <header class="topbar" aria-label="Sticky header">
+    <div class="topbar-inner">
+      <a href="#top" class="brand" aria-label="Vibely home">
+        <img src="vibely app icon.png" alt="Vibely logo" />
+        <span>Vibely</span>
+      </a>
+      <nav class="topnav" aria-label="Main navigation">
+        <a href="#top" class="is-active">Privacy Policy</a>
+        <a href="#contact">Contact Us</a>
+      </nav>
+    </div>
+  </header>
 
-      <div class="note">
-        This Privacy Policy explains how Vibely may process personal information and user content in connection with the features and services available in the app. This is a general privacy notice and is not legal advice.
+  <main id="top">
+    <article class="card policy-card">
+      <div class="hero">
+        <div class="brand-hero">
+          <div class="brand-badge">
+            <img src="vibely app icon.png" alt="Vibely icon" />
+          </div>
+          <div>
+            <div class="brand-name">Vibely</div>
+            <h1>Privacy Policy</h1>
+          </div>
+        </div>
+        <p class="tagline">Your privacy matters to us.</p>
+        <div class="hero-meta">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Last Updated: 2026-09-12</span>
+        </div>
       </div>
 
-      <nav class="toc" aria-label="Table of contents">
-        <h3>Contents</h3>
+      <div class="notice-card" role="note" aria-label="Privacy notice">
+        <div class="notice-icon" aria-hidden="true">i</div>
+        <p>This Privacy Policy explains how Vibely may process personal information and user content in connection with the features and services available in the app. This is a general privacy notice and is not legal advice.</p>
+      </div>
+
+      <div class="policy-content">
+        <nav class="toc" aria-label="Table of contents">
+          <h3>Contents</h3>
+          <ul>
+            <li><a href="#intro"><span class="toc-number">01</span><span class="toc-label">1. Introduction</span></a></li>
+            <li><a href="#collect"><span class="toc-number">02</span><span class="toc-label">2. Information We Collect</span></a></li>
+            <li><a href="#provide"><span class="toc-number">03</span><span class="toc-label">3. Information You Provide</span></a></li>
+            <li><a href="#content"><span class="toc-number">04</span><span class="toc-label">4. User-Generated Content</span></a></li>
+            <li><a href="#camera-mic"><span class="toc-number">05</span><span class="toc-label">5. Camera and Microphone</span></a></li>
+            <li><a href="#posts"><span class="toc-number">06</span><span class="toc-label">6. Posts, Reels and Stories</span></a></li>
+            <li><a href="#messages"><span class="toc-number">07</span><span class="toc-label">7. Messages</span></a></li>
+            <li><a href="#calls"><span class="toc-number">08</span><span class="toc-label">8. Audio and Video Calls</span></a></li>
+            <li><a href="#notifications"><span class="toc-number">09</span><span class="toc-label">9. Notifications</span></a></li>
+            <li><a href="#firebase"><span class="toc-number">10</span><span class="toc-label">10. Firebase</span></a></li>
+            <li><a href="#cloudinary"><span class="toc-number">11</span><span class="toc-label">11. Cloudinary</span></a></li>
+            <li><a href="#ai"><span class="toc-number">12</span><span class="toc-label">12. AI Theme Studio</span></a></li>
+            <li><a href="#use"><span class="toc-number">13</span><span class="toc-label">13. How We Use Information</span></a></li>
+            <li><a href="#share"><span class="toc-number">14</span><span class="toc-label">14. How Information Is Shared</span></a></li>
+            <li><a href="#retention"><span class="toc-number">15</span><span class="toc-label">15. Data Retention</span></a></li>
+            <li><a href="#deletion"><span class="toc-number">16</span><span class="toc-label">16. Account Deletion</span></a></li>
+            <li><a href="#security"><span class="toc-number">17</span><span class="toc-label">17. Security</span></a></li>
+            <li><a href="#children"><span class="toc-number">18</span><span class="toc-label">18. Children's Privacy</span></a></li>
+            <li><a href="#third-party"><span class="toc-number">19</span><span class="toc-label">19. Third-Party Services</span></a></li>
+            <li><a href="#rights"><span class="toc-number">20</span><span class="toc-label">20. Your Privacy Rights</span></a></li>
+            <li><a href="#changes"><span class="toc-number">21</span><span class="toc-label">21. Changes to This Privacy Policy</span></a></li>
+            <li><a href="#contact"><span class="toc-number">22</span><span class="toc-label">22. Contact Us</span></a></li>
+          </ul>
+        </nav>
+
+        <h2 id="intro">1. Introduction</h2>
+        <p>Vibely is a social networking application where users can create accounts, manage profiles, upload media, connect with other users, share content, send messages, and use communication and notification features. This Privacy Policy explains what information Vibely may process in connection with these features.</p>
+        <p>We process information necessary to create and maintain user accounts, deliver social networking functionality, support messaging and calls, provide notifications, and maintain the security and reliability of the app.</p>
+
+        <h2 id="collect">2. Information We Collect</h2>
+        <p>Vibely may process information that users provide directly to the app, information generated through the use of the app, and technical information required to provide and secure the service. Depending on the features enabled in the app, this may include profile information, user-generated content, message data, notification data, and device information related to app functionality.</p>
+
+        <h2 id="provide">3. Information You Provide</h2>
+        <p>When users create an account or use Vibely, they may provide information such as:</p>
         <ul>
-          <li><a href="#intro">1. Introduction</a></li>
-          <li><a href="#collect">2. Information We Collect</a></li>
-          <li><a href="#provide">3. Information You Provide</a></li>
-          <li><a href="#content">4. User-Generated Content</a></li>
-          <li><a href="#camera-mic">5. Camera and Microphone</a></li>
-          <li><a href="#posts">6. Posts, Reels and Stories</a></li>
-          <li><a href="#messages">7. Messages</a></li>
-          <li><a href="#calls">8. Audio and Video Calls</a></li>
-          <li><a href="#notifications">9. Notifications</a></li>
-          <li><a href="#firebase">10. Firebase</a></li>
-          <li><a href="#cloudinary">11. Cloudinary</a></li>
-          <li><a href="#ai">12. AI Theme Studio</a></li>
-          <li><a href="#use">13. How We Use Information</a></li>
-          <li><a href="#share">14. How Information Is Shared</a></li>
-          <li><a href="#retention">15. Data Retention</a></li>
-          <li><a href="#deletion">16. Account Deletion</a></li>
-          <li><a href="#security">17. Security</a></li>
-          <li><a href="#children">18. Children's Privacy</a></li>
-          <li><a href="#third-party">19. Third-Party Services</a></li>
-          <li><a href="#rights">20. Your Privacy Rights</a></li>
-          <li><a href="#changes">21. Changes to This Privacy Policy</a></li>
-          <li><a href="#contact">22. Contact Us</a></li>
+          <li>Name</li>
+          <li>Username</li>
+          <li>Email address</li>
+          <li>Profile photo</li>
+          <li>Bio</li>
+          <li>Photos</li>
+          <li>Videos</li>
+          <li>Reels</li>
+          <li>Stories</li>
+          <li>Captions</li>
+          <li>Comments</li>
+          <li>Messages</li>
+          <li>Other content voluntarily uploaded by users</li>
         </ul>
-      </nav>
+        <p>This information may be processed to create and manage user accounts, display profiles, provide social features, authenticate users, and deliver the service requested by the user.</p>
 
-      <h2 id="intro">1. Introduction</h2>
-      <p>Vibely is a social networking application where users can create accounts, manage profiles, upload media, connect with other users, share content, send messages, and use communication and notification features. This Privacy Policy explains what information Vibely may process in connection with these features.</p>
-      <p>We process information necessary to create and maintain user accounts, deliver social networking functionality, support messaging and calls, provide notifications, and maintain the security and reliability of the app.</p>
+        <h2 id="content">4. User-Generated Content</h2>
+        <p>Users may create and upload content such as photos, videos, reels, stories, comments, captions, text, stickers, emojis, profile information, and other content supported by the app. This content may be processed to provide the social networking features of Vibely, including displaying user profiles and posts, delivering stories and reels, and supporting social interactions.</p>
+        <p>Depending on the sharing features of the app, posts, reels, stories, profile information, comments, and other social content may be visible to other Vibely users. Vibely does not claim that all content is private unless that is clearly implemented and enforced by the app.</p>
+        <p>Users are responsible for the content they upload or share through the app.</p>
 
-      <h2 id="collect">2. Information We Collect</h2>
-      <p>Vibely may process information that users provide directly to the app, information generated through the use of the app, and technical information required to provide and secure the service. Depending on the features enabled in the app, this may include profile information, user-generated content, message data, notification data, and device information related to app functionality.</p>
+        <h2 id="camera-mic">5. Camera and Microphone</h2>
+        <p>Vibely may request camera access for supported features such as creating photos and videos, creating stories, publishing reels, and participating in video calls. Camera access is used only when the relevant feature is actively being used.</p>
+        <p>Vibely may request microphone access for supported audio and video calling features and other supported audio/video recording features. Vibely does not claim continuous or background camera or microphone access unless such access is explicitly implemented and disclosed.</p>
+        <p>Notifications may also be used to deliver messages, calls, likes, comments, follows, and other supported updates.</p>
 
-      <h2 id="provide">3. Information You Provide</h2>
-      <p>When users create an account or use Vibely, they may provide information such as:</p>
-      <ul>
-        <li>Name</li>
-        <li>Username</li>
-        <li>Email address</li>
-        <li>Profile photo</li>
-        <li>Bio</li>
-        <li>Photos</li>
-        <li>Videos</li>
-        <li>Reels</li>
-        <li>Stories</li>
-        <li>Captions</li>
-        <li>Comments</li>
-        <li>Messages</li>
-        <li>Other content voluntarily uploaded by users</li>
-      </ul>
-      <p>This information may be processed to create and manage user accounts, display profiles, provide social features, authenticate users, and deliver the service requested by the user.</p>
+        <h2 id="posts">6. Posts, Reels and Stories</h2>
+        <p>Users may create and publish posts, reels, and stories containing images, videos, captions, text, stickers, emojis, music, or other supported content. These features allow users to share content with other Vibely users and to engage with the social experience of the app.</p>
+        <p>Vibely processes this content to display, store, deliver, and manage the social experiences requested by users.</p>
 
-      <h2 id="content">4. User-Generated Content</h2>
-      <p>Users may create and upload content such as photos, videos, reels, stories, comments, captions, text, stickers, emojis, profile information, and other content supported by the app. This content may be processed to provide the social networking features of Vibely, including displaying user profiles and posts, delivering stories and reels, and supporting social interactions.</p>
-      <p>Depending on the sharing features of the app, posts, reels, stories, profile information, comments, and other social content may be visible to other Vibely users. Vibely does not claim that all content is private unless that is clearly implemented and enforced by the app.</p>
-      <p>Users are responsible for the content they upload or share through the app.</p>
+        <h2 id="messages">7. Messages</h2>
+        <p>Vibely may process private messages and related information, including senders, recipients, timestamps, message metadata, and shared media or content references, to provide messaging functionality. This information may be used to deliver, display, and manage messages within the app.</p>
+        <p>Vibely does not claim end-to-end encryption unless that technical guarantee is implemented and clearly communicated by the app.</p>
 
-      <h2 id="camera-mic">5. Camera and Microphone</h2>
-      <p>Vibely may request camera access for supported features such as creating photos and videos, creating stories, publishing reels, and participating in video calls. Camera access is used only when the relevant feature is actively being used.</p>
-      <p>Vibely may request microphone access for supported audio and video calling features and other supported audio/video recording features. Vibely does not claim continuous or background camera or microphone access unless such access is explicitly implemented and disclosed.</p>
-      <p>Notifications may also be used to deliver messages, calls, likes, comments, follows, and other supported updates.</p>
+        <h2 id="calls">8. Audio and Video Calls</h2>
+        <p>Vibely may use WebRTC for real-time audio and video calling. During calls, camera and microphone data may be used to provide the call experience, and related signaling and connection data may be processed to establish and maintain the connection.</p>
+        <p>Vibely does not record audio or video calls unless call recording is explicitly implemented and clearly disclosed. If call recording is not implemented, Vibely should not claim that calls are recorded.</p>
+        <p>Vibely does not claim end-to-end encryption unless the app's call implementation explicitly provides it.</p>
 
-      <h2 id="posts">6. Posts, Reels and Stories</h2>
-      <p>Users may create and publish posts, reels, and stories containing images, videos, captions, text, stickers, emojis, music, or other supported content. These features allow users to share content with other Vibely users and to engage with the social experience of the app.</p>
-      <p>Vibely processes this content to display, store, deliver, and manage the social experiences requested by users.</p>
+        <h2 id="notifications">9. Notifications</h2>
+        <p>Vibely may use push notifications and device notification tokens to deliver updates about messages, calls, likes, comments, follows, stories, and other supported notifications. This allows users to receive timely information about activity in the app.</p>
+        <p>Device tokens and related notification metadata may be processed to deliver the relevant notification to the correct device.</p>
 
-      <h2 id="messages">7. Messages</h2>
-      <p>Vibely may process private messages and related information, including senders, recipients, timestamps, message metadata, and shared media or content references, to provide messaging functionality. This information may be used to deliver, display, and manage messages within the app.</p>
-      <p>Vibely does not claim end-to-end encryption unless that technical guarantee is implemented and clearly communicated by the app.</p>
+        <h2 id="firebase">10. Firebase</h2>
+        <p>Vibely may use Firebase services to support account authentication, database functionality, social content storage, message handling, notifications, and application functionality. Firebase services may process account authentication information, app data, notifications, and device tokens required to operate the service.</p>
+        <p>Firebase credentials or tokens should never be exposed in public documentation or the app. Vibely does not disclose private Firebase credentials in the Privacy Policy.</p>
 
-      <h2 id="calls">8. Audio and Video Calls</h2>
-      <p>Vibely may use WebRTC for real-time audio and video calling. During calls, camera and microphone data may be used to provide the call experience, and related signaling and connection data may be processed to establish and maintain the connection.</p>
-      <p>Vibely does not record audio or video calls unless call recording is explicitly implemented and clearly disclosed. If call recording is not implemented, Vibely should not claim that calls are recorded.</p>
-      <p>Vibely does not claim end-to-end encryption unless the app's call implementation explicitly provides it.</p>
+        <h2 id="cloudinary">11. Cloudinary</h2>
+        <p>Vibely may use Cloudinary to store, process, and deliver uploaded media such as photos, videos, reels, and stories. When media is uploaded, it may be transmitted to Cloudinary or a similar media infrastructure provider to support hosting, processing, and delivery.</p>
+        <p>Cloudinary API keys, secrets, or upload credentials must not be exposed in the Privacy Policy or app.</p>
 
-      <h2 id="notifications">9. Notifications</h2>
-      <p>Vibely may use push notifications and device notification tokens to deliver updates about messages, calls, likes, comments, follows, stories, and other supported notifications. This allows users to receive timely information about activity in the app.</p>
-      <p>Device tokens and related notification metadata may be processed to deliver the relevant notification to the correct device.</p>
+        <h2 id="ai">12. AI Theme Studio</h2>
+        <p>When a user uses AI Theme Studio, the user's theme instructions or prompts may be processed by the AI service used by Vibely to generate a theme configuration or similar result. The purpose is to generate a theme based on the user's request.</p>
+        <p>Vibely does not claim AI processing for unrelated user content. API keys or other sensitive credentials must not be disclosed.</p>
 
-      <h2 id="firebase">10. Firebase</h2>
-      <p>Vibely may use Firebase services to support account authentication, database functionality, social content storage, message handling, notifications, and application functionality. Firebase services may process account authentication information, app data, notifications, and device tokens required to operate the service.</p>
-      <p>Firebase credentials or tokens should never be exposed in public documentation or the app. Vibely does not disclose private Firebase credentials in the Privacy Policy.</p>
+        <h2 id="use">13. How We Use Information</h2>
+        <p>Vibely may use information to:</p>
+        <ul>
+          <li>Create and manage accounts</li>
+          <li>Provide social networking functionality</li>
+          <li>Display profiles and content</li>
+          <li>Deliver posts, stories, and reels</li>
+          <li>Enable messaging</li>
+          <li>Enable audio and video calls</li>
+          <li>Send notifications</li>
+          <li>Provide likes, comments, and follow features</li>
+          <li>Provide AI Theme Studio</li>
+          <li>Maintain security</li>
+          <li>Prevent abuse</li>
+          <li>Improve application functionality</li>
+        </ul>
 
-      <h2 id="cloudinary">11. Cloudinary</h2>
-      <p>Vibely may use Cloudinary to store, process, and deliver uploaded media such as photos, videos, reels, and stories. When media is uploaded, it may be transmitted to Cloudinary or a similar media infrastructure provider to support hosting, processing, and delivery.</p>
-      <p>Cloudinary API keys, secrets, or upload credentials must not be exposed in the Privacy Policy or app.</p>
+        <h2 id="share">14. How Information Is Shared</h2>
+        <p>Information may be shared with other Vibely users when a user chooses to publish or socially share content, such as posts, reels, stories, profile information, comments, or messages in the app's supported sharing features.</p>
+        <p>Vibely may also share information with service providers required to operate the service, including Firebase, Cloudinary, WebRTC-related infrastructure, and AI service providers when those services are used. Vibely does not say that it never shares user information, because some sharing is required to provide the service.</p>
 
-      <h2 id="ai">12. AI Theme Studio</h2>
-      <p>When a user uses AI Theme Studio, the user's theme instructions or prompts may be processed by the AI service used by Vibely to generate a theme configuration or similar result. The purpose is to generate a theme based on the user's request.</p>
-      <p>Vibely does not claim AI processing for unrelated user content. API keys or other sensitive credentials must not be disclosed.</p>
+        <h2 id="retention">15. Data Retention</h2>
+        <p>Vibely may retain information for as long as necessary to provide the services, maintain user accounts, resolve disputes, maintain security, and comply with applicable legal obligations. The exact retention period depends on the type of information and the feature involved.</p>
+        <p>Vibely does not promise immediate permanent deletion unless the app's actual data handling and backend processes guarantee that result.</p>
 
-      <h2 id="use">13. How We Use Information</h2>
-      <p>Vibely may use information to:</p>
-      <ul>
-        <li>Create and manage accounts</li>
-        <li>Provide social networking functionality</li>
-        <li>Display profiles and content</li>
-        <li>Deliver posts, stories, and reels</li>
-        <li>Enable messaging</li>
-        <li>Enable audio and video calls</li>
-        <li>Send notifications</li>
-        <li>Provide likes, comments, and follow features</li>
-        <li>Provide AI Theme Studio</li>
-        <li>Maintain security</li>
-        <li>Prevent abuse</li>
-        <li>Improve application functionality</li>
-      </ul>
+        <div class="highlight-panel">
+          <h2 id="deletion">16. Account Deletion</h2>
+          <p>Users may request deletion of their Vibely account and associated personal information through the deletion functionality provided by the app, if available. If a public deletion URL is not available, users may request account deletion assistance by contacting the privacy email address listed below.</p>
+          <p>For account deletion assistance, contact us at the privacy email address below.</p>
+        </div>
 
-      <h2 id="share">14. How Information Is Shared</h2>
-      <p>Information may be shared with other Vibely users when a user chooses to publish or socially share content, such as posts, reels, stories, profile information, comments, or messages in the app's supported sharing features.</p>
-      <p>Vibely may also share information with service providers required to operate the service, including Firebase, Cloudinary, WebRTC-related infrastructure, and AI service providers when those services are used. Vibely does not say that it never shares user information, because some sharing is required to provide the service.</p>
+        <h2 id="security">17. Security</h2>
+        <p>Vibely uses reasonable technical and organizational measures to protect information, including authentication, access controls, Firestore security rules, HTTPS/TLS, and restricted server credentials where applicable. These measures are designed to help protect user information from unauthorized access or misuse.</p>
+        <p>Vibely does not claim that its systems are 100% secure, unhackable, or completely secure.</p>
 
-      <h2 id="retention">15. Data Retention</h2>
-      <p>Vibely may retain information for as long as necessary to provide the services, maintain user accounts, resolve disputes, maintain security, and comply with applicable legal obligations. The exact retention period depends on the type of information and the feature involved.</p>
-      <p>Vibely does not promise immediate permanent deletion unless the app's actual data handling and backend processes guarantee that result.</p>
+        <h2 id="children">18. Children's Privacy</h2>
+        <p>Vibely is intended for users who meet the app's applicable age requirements. Vibely does not claim to perform automated age verification unless such a process is actually implemented and disclosed. Parents or guardians who believe their child has submitted personal information without consent may contact us using the contact details below.</p>
 
-      <h2 id="deletion">16. Account Deletion</h2>
-      <p>Users may request deletion of their Vibely account and associated personal information through the deletion functionality provided by the app, if available. If a public deletion URL is not available, users may request account deletion assistance by contacting the privacy email address listed below.</p>
-      <p>For account deletion assistance, contact us at the privacy email address below.</p>
+        <h2 id="third-party">19. Third-Party Services</h2>
+        <p>Vibely may use third-party infrastructure providers to support the app's functionality. These providers may process information necessary to operate the service. The third-party services currently relevant to Vibely may include:</p>
+        <ul>
+          <li>Firebase</li>
+          <li>Cloudinary</li>
+          <li>WebRTC-related services</li>
+          <li>AI service used for AI Theme Studio</li>
+        </ul>
+        <p>Please review the official privacy policies of those providers for more detail on their data practices. Official privacy policy links should be added only when the exact official URLs are confirmed.</p>
 
-      <h2 id="security">17. Security</h2>
-      <p>Vibely uses reasonable technical and organizational measures to protect information, including authentication, access controls, Firestore security rules, HTTPS/TLS, and restricted server credentials where applicable. These measures are designed to help protect user information from unauthorized access or misuse.</p>
-      <p>Vibely does not claim that its systems are 100% secure, unhackable, or completely secure.</p>
+        <h2 id="rights">20. Your Privacy Rights</h2>
+        <p>Depending on your location and the laws that apply, you may have rights regarding your personal information, including rights to access, correct, delete, or restrict the processing of some information, and to withdraw certain permissions where applicable. Vibely may support these requests where reasonably possible and as required by applicable privacy laws.</p>
+        <p>Vibely does not claim specific legal compliance unless that compliance has been clearly established and verified.</p>
 
-      <h2 id="children">18. Children's Privacy</h2>
-      <p>Vibely is intended for users who meet the app's applicable age requirements. Vibely does not claim to perform automated age verification unless such a process is actually implemented and disclosed. Parents or guardians who believe their child has submitted personal information without consent may contact us using the contact details below.</p>
+        <h2 id="changes">21. Changes to This Privacy Policy</h2>
+        <p>Vibely may update this Privacy Policy from time to time to reflect new features, service providers, or legal requirements. The updated version will be published on this webpage, and the date above will be updated accordingly.</p>
 
-      <h2 id="third-party">19. Third-Party Services</h2>
-      <p>Vibely may use third-party infrastructure providers to support the app's functionality. These providers may process information necessary to operate the service. The third-party services currently relevant to Vibely may include:</p>
-      <ul>
-        <li>Firebase</li>
-        <li>Cloudinary</li>
-        <li>WebRTC-related services</li>
-        <li>AI service used for AI Theme Studio</li>
-      </ul>
-      <p>Please review the official privacy policies of those providers for more detail on their data practices. Official privacy policy links should be added only when the exact official URLs are confirmed.</p>
+        <div class="contact-card" id="contact">
+          <h3>Contact Us</h3>
+          <p>If you have questions, concerns, or requests related to this Privacy Policy or your personal information, please contact us at:</p>
+          <p>Max Technologies and IT Services Pvt Ltd <br /><a class="email-link" href="mailto:Max459010@gmail.com">Max459010@gmail.com</a><br /></p>
+        </div>
 
-      <h2 id="rights">20. Your Privacy Rights</h2>
-      <p>Depending on your location and the laws that apply, you may have rights regarding your personal information, including rights to access, correct, delete, or restrict the processing of some information, and to withdraw certain permissions where applicable. Vibely may support these requests where reasonably possible and as required by applicable privacy laws.</p>
-      <p>Vibely does not claim specific legal compliance unless that compliance has been clearly established and verified.</p>
-
-      <h2 id="changes">21. Changes to This Privacy Policy</h2>
-      <p>Vibely may update this Privacy Policy from time to time to reflect new features, service providers, or legal requirements. The updated version will be published on this webpage, and the date above will be updated accordingly.</p>
-
-      <h2 id="contact">22. Contact Us</h2>
-      <p>If you have questions, concerns, or requests related to this Privacy Policy or your personal information, please contact us at:</p>
-      <p>Max Technologies and IT Services Pvt Ltd <br /><a class="email-link" href="mailto:Max459010@gmail.com">Max459010@gmail.com</a><br /></p>
-
-      <footer>
-        <p>Vibely Privacy Policy</p>
-      </footer>
+        <footer>
+          <div class="footer-inner">
+            <div class="footer-brand">
+              <img src="vibely app icon.png" alt="Vibely logo" />
+              <span>Vibely</span>
+            </div>
+            <div class="footer-links">
+              <a href="#top">Privacy Policy</a>
+              <a href="#contact">Contact Us</a>
+              <span>Last Updated: 2026-09-12</span>
+            </div>
+          </div>
+        </footer>
+      </div>
     </article>
   </main>
+
+  <button id="backToTop" class="float-top" type="button" aria-label="Back to top">↑</button>
+
+  <script>
+    const backToTop = document.getElementById('backToTop');
+    const topNavLinks = document.querySelectorAll('.topnav a');
+
+    function toggleBackToTop() {
+      if (window.scrollY > 260) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    }
+
+    function setActiveTopNav() {
+      const sectionIds = ['#top', '#contact'];
+      let active = '#top';
+      if (window.scrollY > 240) {
+        active = '#contact';
+      }
+      topNavLinks.forEach((link) => {
+        const isActive = link.getAttribute('href') === active;
+        link.classList.toggle('is-active', isActive);
+      });
+    }
+
+    backToTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    window.addEventListener('scroll', function () {
+      toggleBackToTop();
+      setActiveTopNav();
+    }, { passive: true });
+
+    toggleBackToTop();
+    setActiveTopNav();
+  </script>
 </body>
 </html>
