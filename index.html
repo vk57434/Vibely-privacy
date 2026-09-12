@@ -30,6 +30,10 @@
       scroll-padding-top: 104px;
     }
 
+    #account-deletion {
+      scroll-margin-top: 100px;
+    }
+
     body {
       margin: 0;
       font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
@@ -244,7 +248,8 @@
     .notice-card,
     .toc,
     .highlight-panel,
-    .contact-card {
+    .contact-card,
+    .account-deletion-card {
       position: relative;
       z-index: 1;
       background: rgba(255, 255, 255, 0.96);
@@ -410,6 +415,38 @@
 
     .highlight-panel p:last-child {
       margin-bottom: 0;
+    }
+
+    .account-deletion-card {
+      margin: 1.3rem 0 1.5rem;
+      padding: 1.25rem 1.2rem;
+      background: linear-gradient(135deg, rgba(18, 199, 181, 0.07), rgba(37, 99, 235, 0.03));
+      border: 1px solid rgba(18, 199, 181, 0.2);
+      box-shadow: 0 18px 30px rgba(15, 23, 42, 0.04);
+    }
+
+    .account-deletion-card h3 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-size: 1.18rem;
+    }
+
+    .account-deletion-card p {
+      color: var(--text);
+    }
+
+    .account-delete-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
+      margin-bottom: 0.7rem;
+      border-radius: 16px;
+      background: rgba(18, 199, 181, 0.12);
+      color: var(--accent-strong);
+      font-size: 1.4rem;
+      border: 1px solid rgba(18, 199, 181, 0.18);
     }
 
     .contact-card {
@@ -666,7 +703,7 @@
             <li><a href="#use"><span class="toc-number">13</span><span class="toc-label">13. How We Use Information</span></a></li>
             <li><a href="#share"><span class="toc-number">14</span><span class="toc-label">14. How Information Is Shared</span></a></li>
             <li><a href="#retention"><span class="toc-number">15</span><span class="toc-label">15. Data Retention</span></a></li>
-            <li><a href="#deletion"><span class="toc-number">16</span><span class="toc-label">16. Account Deletion</span></a></li>
+            <li><a href="#account-deletion"><span class="toc-number">16</span><span class="toc-label">16. Account Deletion</span></a></li>
             <li><a href="#security"><span class="toc-number">17</span><span class="toc-label">17. Security</span></a></li>
             <li><a href="#children"><span class="toc-number">18</span><span class="toc-label">18. Children's Privacy</span></a></li>
             <li><a href="#third-party"><span class="toc-number">19</span><span class="toc-label">19. Third-Party Services</span></a></li>
@@ -766,11 +803,18 @@
         <p>Vibely may retain information for as long as necessary to provide the services, maintain user accounts, resolve disputes, maintain security, and comply with applicable legal obligations. The exact retention period depends on the type of information and the feature involved.</p>
         <p>Vibely does not promise immediate permanent deletion unless the app's actual data handling and backend processes guarantee that result.</p>
 
-        <div class="highlight-panel">
-          <h2 id="deletion">16. Account Deletion</h2>
-          <p>Users may request deletion of their Vibely account and associated personal information through the deletion functionality provided by the app, if available. If a public deletion URL is not available, users may request account deletion assistance by contacting the privacy email address listed below.</p>
-          <p>For account deletion assistance, contact us at the privacy email address below.</p>
-        </div>
+        <section id="account-deletion" aria-labelledby="account-deletion-title">
+          <div class="account-deletion-card">
+            <div class="account-delete-icon" aria-hidden="true">🗑️</div>
+            <h2 id="account-deletion-title">16. Account Deletion</h2>
+            <p>Users may request deletion of their Vibely account and associated personal information through the deletion functionality provided by the app, if available. If a public deletion URL is not available, users may request account deletion assistance by contacting the privacy email address listed below.</p>
+            <p>For account deletion assistance, contact us at the privacy email address below.</p>
+            <p>To request account deletion, users should contact Vibely using the privacy email address listed in this policy, or use the in-app account deletion option if one is available in the app. If the app includes a deletion flow, it may be available from the user's profile or account settings area, such as: "Open Vibely → Profile → Settings → Delete Account". The exact path may vary depending on the app version, but users should look for a delete account or account removal option in their profile or settings menu.</p>
+            <p>When an account is deleted, Vibely will remove or delete the user's account data and user-generated content that is directly associated with the account, including profile information, uploaded media, posts, stories, profile content, messages, and other related content where those items are managed through the account and are eligible for removal under the app's data handling processes. Some information may be retained where necessary for legitimate business, legal, security, fraud-prevention, or compliance reasons, such as records required to protect the service or enforce applicable obligations.</p>
+            <p>Deletion requests may take time to process depending on the amount of data involved, system background cleanup, and other operational factors. In some cases, certain records may remain temporarily or persist in backups, logs, or other system storage for operational or legal reasons even after the main account record has been removed.</p>
+            <p>If a user cannot access their account or cannot find the deletion option in the app, they may contact Vibely at the privacy email address below and request account deletion assistance.</p>
+          </div>
+        </section>
 
         <h2 id="security">17. Security</h2>
         <p>Vibely uses reasonable technical and organizational measures to protect information, including authentication, access controls, Firestore security rules, HTTPS/TLS, and restricted server credentials where applicable. These measures are designed to help protect user information from unauthorized access or misuse.</p>
